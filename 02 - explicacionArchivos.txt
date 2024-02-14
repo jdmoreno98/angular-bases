@@ -1,0 +1,60 @@
+.editorConfig
+  - Extensión que instalamos nosotros, que establece las configuraciones por defecto para este proyecto
+  - Para que el código se vea igual al de otras personas que trabajan en este editor
+  - No tiene nada que ver con Angular
+
+.gitignore
+  - Descripción ficheros que se ignorarán cuando haya alguna subida
+
+angular.json (Archivo importante, no se suele modificar)
+  - En este fichero le decimos a Angular algunas configuraciones para la ejecución e nuestra aplicación (Como el builder, el directorio de salida, el archivo que se utiliza para lanzar inicialmente la aplicación (index.html), cual va a ser el main, el archivo de configuración, los estilos globales... )
+
+package-lock.json (Nunca lo tocaremos manualmente)
+  - Indica como construir los módulos de Node
+
+package.json
+  - Este fichero es algo propio de node.
+  - dependencies: {Están definidas las dependencias de nuestra aplicación de Producción (Hará tree shaking es decir, eliminará las dependencias que no se utilicen) }
+  - devDependencies: { Dependencias de desarrollo, solo son las que nos ayudarán cuando estemos creando la aplicación}
+
+
+README.md
+  - Fichero en el que se explica alguna configuración / documentación especifica del proyecto
+
+
+tsconfig.app.json - tsconfig.json - tsconfig.spec.json
+ - Archivos de configuración de typescript
+
+
+
+ DIRECTORIOS
+
+ .angular
+  - Se genera de manera automática y no va a haber que modificar nada
+  - Ayuda a Angular a controlar el caché
+
+.vscode
+   - Generado automáticamente por vscode y no va a haber que modificar nada al 99%
+
+
+node_modules
+   - Modulos de Node
+
+
+src
+   - favicon.ico --> Icono que aparece en la app en la pestaña
+   - index.html --> Html imple pero que tiene la etiqueta app-root en la que vendra toda la magia
+   - main.ts -->
+   - styles.css --> En Angular podemos utilizar Estilos globales y estilos por modulo. EN este caso es un estilo globales
+
+
+src / app
+   - app.component.css --> CSS
+   - app.component.html --> HTML
+   - app.component.ts --> Es una clase que tiene un decorador que se llama @Component (Donde se define el componente principal)
+   - app.component.spec.ts --> Testing
+   - app.module.ts --> Archivo importante que veremos más adelante lo que pestaña
+   -! CADA UNA DE LAS CARPETAS QUE PONGAMOS EN ESTA RUTA, SERÁ UN MÓDULO INDEPENDIENTE
+
+src / assets
+Esta carpeta es para tener recursos estaticos

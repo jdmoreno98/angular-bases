@@ -1,0 +1,37 @@
+<h1>{{ nombre }}</h1>
+
+<ul>
+
+  <li>Nombre</li>
+  <li>{{ nombre }}</li>
+  <li>Edad</li>
+  <li>{{ edad }}</li>
+  <li>Método</li>
+  <li>{{ getHeroDescription() }}</li>
+
+  <li>Nombre capitalizado</li>
+  <li>{{capitalizedName}}</li>
+
+  <li>Nombre capitalizado</li>
+  <li>{{nombre.toUpperCase}}</li>
+</ul>
+
+<!-- El ngIf lo que hace es cargarlo pero lo muestra o no
+    Para mostrarlo debería ser un true  o numérico != 0 . Los falsos son = false,undefined,null,0
+    *ngIf="mostrarBoton" -- aquí estaría bindeado a una variable
+    *ngIf="nombre === 'Spiderman'"// *ngIf="nombre !== 'Spiderman'" -- Aquí está comprobando una variable del .ts
+    El triple igual es para que evalue, el tipo de dato y como es case sensitive...
+    Así desaparecerían los botones tras hacer click en ellos porque cambiaría el valor de los atrributos y ya sería flse
+
+-->
+<button
+*ngIf="nombre !== 'Spiderman'"
+(click)="changeHero()" class="btn btn-primary mx-2">Cambiar nombre</button>
+
+<button (click)="changeEdad()"
+*ngIf="edad !==25 "
+class="btn btn-primary mx-2">Cambiar edad</button>
+
+
+<button (click)="reset()"
+class="btn btn-primary mx-2">Reset</button>

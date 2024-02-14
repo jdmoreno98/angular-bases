@@ -1,0 +1,63 @@
+<h3>Listado de heroes</h3>
+
+<ul class = "mt-2 list-group">
+<!--  <li class="list-group-item">SPIDERMAN</li>
+  <li class="list-group-item">Ironman</li>
+  <li class="list-group-item">Hulk</li>
+  <li class="list-group-item">Thor</li>
+
+  LA MANERA SIN USAR EL NGFOR SERÍA ESTA DE ARRIBA
+
+
+  !01 - *UTILIZANDO NGFOR
+    Angular duplica el elemento html tantas veces como elementos tenga el array
+    El nombre del atrributo en el let es el que luego haremos uso en la interpolación. El nombre despues deel of es el de la variable definida en el TS
+  -->
+  <li *ngFor="let nombreHeroe of heroNames" class="list-group-item">{{nombreHeroe}}</li>
+
+</ul>
+
+<!--
+  !02 *APRENDIENDO ngIfElse
+-->
+<button *ngIf="heroNames.length > 0" (click)="removeLastHero()" class="btn btn-outline-danger">Borrar último heroe</button>
+
+<!--
+  !03
+  Si eliminasemos todos los héroes o nada más entramos aparece el texto Heroe borrado:
+ * Entonces para que no se viera ese texto, utilizamos:
+ *ngIf="deletedHeroe" -- Con esto hacemos que si tiene valor se muestre (al ser true)
+  *ngIf="!deletedHeroe" -- Al no tener valor no se muestra
+
+  ! * Para evitar tener que usar 2 veces esta variable, utilizamos el ng-template
+   ng-template -- Es como un div que no existe. En lugar de construir el div html, no lo constrruye porque hay que decirle en que momento y como va a mostrarse
+   La diferencia es que entrer el ngIf y el template es que el primero si lo carga en el DOM y el 2º solo lo hace cuando se cree
+
+<div *ngIf="deletedHeroe">
+  <h3> Heróe borrado: <small class="text-danger"> {{deletedHeroe }}</small></h3>
+</div>
+
+
+<h3 *ngIf="!deletedHeroe">No hay nada borrado</h3>
+
+
+-->
+
+<!--
+
+! 05 - Lo que vamos a hacer es utilizar el ngTemplate
+* El orden es, comprueba si se cumple el if, si no se cumple hace lo del else (nombreDelTemplateAMostrar que le podemos poner el que queramos)
+* Tras esto, le ponemos el nombre precedido de una almohadilla en el template #nadaBorrado
+* Esto se conoce como una referencia local, ya que ese nombre solo tiene su ambito en el html
+* Si inspeccionamos el HTML veremos que el div de Heróe borrado veremos que si aparece, pero si vemos el H3 de no hay nada borrado, veremos que no está encapsulado
+* en un div
+-->
+<div *ngIf="deletedHeroe; else nadaBorrado">
+  <h3> Heróe borrado: <small class="text-danger"> {{deletedHeroe }}</small></h3>
+</div>
+
+
+
+<ng-template #nadaBorrado>
+  <h3 *ngIf="!deletedHeroe">No hay nada borrado</h3>
+</ng-template>

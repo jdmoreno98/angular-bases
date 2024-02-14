@@ -1,0 +1,39 @@
+Para iniciar una aplicación desde 0 (--standalone false  por la versión 17 o +):
+
+    - ng new <nombre de la aplicación> --standalone false
+    - D:\Cursos\Angular De cero a experto - Edición 2023\Workspaces\2.- Angular>ng new bases --standalone false
+
+
+Después nos metemos en la carpeta de la aplicación (bases) y ejecutamos:
+     - ng serve (Nos levantará la aplicación en el puerto  por defecto)
+          Application bundle generation complete. [6.520 seconds]
+          Watch mode enabled. Watching for file changes...
+          ➜  Local:   http://localhost:4200/
+          ➜  press h + enter to show help
+
+      - ng serve -o (Nos levanta la app y nos abre la app en el navegador)
+
+
+Podemos modificar el fichero package.json y cambiar los scripts
+
+-- Version inicial
+ "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "serve:ssr:bases": "node dist/bases/server/server.mjs"
+  },
+
+-- Version cambiada
+ "scripts": {
+    "ng": "ng",
+    "start": "ng serve -o",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "serve:ssr:bases": "node dist/bases/server/server.mjs"
+  },
+
+  Así cuando ejecutemos NPM START ejecutará un ng serve -o
