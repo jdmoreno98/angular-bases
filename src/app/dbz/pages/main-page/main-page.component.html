@@ -17,6 +17,11 @@
 
 
   <div class="col">
-   <app-dbz-add-character></app-dbz-add-character>
+    <!--
+       * Cuando ponemos [] hacemos referencia a un atributo y cuando ponemos () significa que estamos capturando / escuchando un evento.
+      ! Aquí estamos diciendo que cuando mi componente dbz-add-character emita un nuevo personaje llamemos al método onNewCharacterMain($event)
+      ! $event es una nomenclatura especial de Angular para que el valor que está emitiendo (onNewCharacter) se recoja con el tipo correcto en  onNewCharacterMain
+     -->
+   <app-dbz-add-character (onNewCharacter)="onNewCharacterMain($event)"></app-dbz-add-character>
   </div>
 </div>

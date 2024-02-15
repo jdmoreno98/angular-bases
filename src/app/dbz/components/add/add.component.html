@@ -1,8 +1,8 @@
 <h5>Agregar personaje</h5>
-<form action="" class="row">
+<form action="" class="row" (ngSubmit)="emitCharacter()">
     <input type="text" [(ngModel)]="character.name" name="name" class="form-control mb-2" placeholder="Nombre" >
-    <!-- value="{{character.name}}" ES LO MISMO QUE [value]="character.name"-->
-    <!-- ! Para tener bindeado el objeto es necesario añadirle el ngModel y la propiedad name de html  -->
+    <!--  value="{{character.name}}" ES LO MISMO QUE [value]="character.name"-->
+    <!--  ! Para tener bindeado el objeto es necesario añadirle el ngModel y la propiedad name de html  -->
     <input type="text" [(ngModel)]="character.power" name ="power" class="form-control mb-2"  placeholder="Poder" value="{{character.power}}">
       <button type="submit" class="btn btn-primary">Agregar</button>
 

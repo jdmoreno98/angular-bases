@@ -17,4 +17,8 @@ export class MainPageComponent {
     name:'Vegeta',
     power:999
   }];
+
+  onNewCharacterMain(character : Character):void{
+      this.characters.push(character);
+  }
 }
