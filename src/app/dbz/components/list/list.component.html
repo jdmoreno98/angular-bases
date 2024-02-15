@@ -6,7 +6,17 @@
     let isLast = last;
     let isEven = even;
     let isOdd = odd;
-    " class="list-group-item">
+    "
+
+
+    class="list-group-item"
+    [ngClass]="{
+      'list-group-item-primary': isEven,
+      'list-group-item-success': isLast
+      }">
+  <!-- Todo lo que pongamos entre [] le estamos indicando a Angular que 'tome el control' y a lo que lo igualemos va a ser una expresión de JS
+      Basicamente cualquier atributo de html que conozcamos le podemos decir a angular que lo controle
+  -->
 
       <span>{{i + 1 }}</span>
 
