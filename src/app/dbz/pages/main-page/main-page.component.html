@@ -1,1 +1,22 @@
-<h1>DBZ MAIN PAGE</h1>
+<h1>DBZ personajes</h1>
+<hr/>
+<!--
+
+! La idea es empezar a reutilizar componentes y módulos. Por ejemplo la lista podríamos parametrizarla, crernaod un componente que muestrer una lista
+! pero que los valores sea lo que vaya cambiando. En este caso hacemos un listado de "personajes".
+! Así todo el bloque desde el h4 hasta el cierre deel UL vamos a crear un componente
+
+-->
+
+<div class="row">
+  <div class="col">
+
+    <app-dbz-list></app-dbz-list>
+
+  </div>
+
+
+  <div class="col">
+   <app-dbz-add-character></app-dbz-add-character>
+  </div>
+</div>
