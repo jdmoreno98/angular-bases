@@ -25,7 +25,14 @@ export class AddComponent {
 
     if( this.character.name.length === 0 ) return;
 
-    this.onNewCharacter.emit(this.character);
+    //  this.onNewCharacter.emit(this.character);
+    // ! * Esto tiene que ir así, porque si no pilla la referencia del objeto y al modificarlo en uno se modifica en todos los que hayamos añadido a la lista
+    // ! * Al hacer esto es como si hicieramos un new y no coge la referencia. Así cada objeto es independiente
+    this.onNewCharacter.emit({...this.character});
+
+    this.character.name = '';
+    this.character.power = 0
+
 
   }
 
