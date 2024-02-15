@@ -21,4 +21,10 @@ export class MainPageComponent {
   onNewCharacterMain(character : Character):void{
       this.characters.push(character);
   }
+
+  onDeleteCharacterMain(index :number):void{
+    console.log('EVENTOOO'+index);
+    this.characters.splice(index,1);
+  //  this.characters.splice(index);
+  }
 }

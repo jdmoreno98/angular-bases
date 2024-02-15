@@ -9,11 +9,12 @@
     "
 
 
-    class="list-group-item"
+    class="list-group-item d-flex justify-content-between align-items-center"
     [ngClass]="{
       'list-group-item-primary': isEven,
       'list-group-item-success': isLast
       }">
+
   <!-- Todo lo que pongamos entre [] le estamos indicando a Angular que 'tome el control' y a lo que lo igualemos va a ser una expresión de JS
       Basicamente cualquier atributo de html que conozcamos le podemos decir a angular que lo controle
   -->
@@ -31,7 +32,6 @@
        </span>
       <span>Es el ultimo: {{i === characterList.length - 1}}
        </span>
-      -->
 
       <span>Es el primero: {{isFirst}}
       </span>
@@ -41,6 +41,10 @@
       </span>
       <span>El indice es impar: {{isOdd}}
       </span>
+      -->
 
+      <button class="btn btn-danger" (click)="onDeleteCharacter(i)"> X </button>
       </li>
   </ul>
+
+
