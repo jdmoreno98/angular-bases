@@ -11,7 +11,25 @@ export class MainPageComponent {
 
   // ! Inyección de dependencias
   //* Con esto habilitamos toda la inforamción que estemos utilizando en el servicio
-  constructor(public dbzService: DbzService){
+
+
+  // * Buenas prácticas es hacer los servicios privados, una de las razones es porque si importamos el mainPageComponent también expondríamos al servicio ya que sería public
+  constructor(private dbzService: DbzService){
   }
+
+
+  get characters(): Character[] {
+    return {...this.dbzService.characters};
+  }
+
+  onDeleteCharacter(id:string):void{
+    this.dbzService.deleteCharacterById(id);
+  }
+
+  onNewCharacter(character: Character):void{
+    this.dbzService.onNewCharacterMain(character);
+  }
+
+
 
 }
