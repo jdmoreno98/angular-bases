@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
+import { v4 } from 'uuid';
 
 @Component({
   selector: 'app-dbz-add-character',
@@ -16,6 +17,7 @@ export class AddComponent {
 
   // * Personaje al que está bindeado en el addComponent.html
   public character : Character = {
+    id:v4(),
     name:'',
     power:0
   };
