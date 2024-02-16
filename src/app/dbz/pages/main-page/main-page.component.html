@@ -11,7 +11,7 @@
 <div class="row">
   <div class="col">
 
-    <app-dbz-list [characterList]="characters" (deletedCharacter)="onDeleteCharacterMain($event)"></app-dbz-list>
+    <app-dbz-list [characterList]="dbzService.characters" (deletedCharacter)="dbzService.onDeleteCharacterMain($event)"></app-dbz-list>
 
   </div>
 
@@ -23,6 +23,6 @@
       ! $event es una nomenclatura especial de Angular para que el valor que está emitiendo (onNewCharacter) se recoja con el tipo correcto en  onNewCharacterMain
       ! El nombre que tenemos que poner entrer () es el de la PROPIEDAD que es lo que vamos a 'emitir' no el del método
      -->
-   <app-dbz-add-character (onNewCharacter)="onNewCharacterMain($event)"></app-dbz-add-character>
+   <app-dbz-add-character (onNewCharacter)="dbzService.onNewCharacterMain($event)"></app-dbz-add-character>
   </div>
 </div>
