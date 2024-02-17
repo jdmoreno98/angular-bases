@@ -19,14 +19,14 @@ export class MainPageComponent {
 
 
   get characters(): Character[] {
-    return {...this.dbzService.characters};
+    return this.dbzService.characters;
   }
 
   onDeleteCharacter(id:string):void{
     this.dbzService.deleteCharacterById(id);
   }
 
-  onNewCharacter(character: Character):void{
+  onNewCharacterService(character: Character):void{
     this.dbzService.onNewCharacterMain(character);
   }
 
